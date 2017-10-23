@@ -1,0 +1,6 @@
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\bin\Debug\05-while(true).exe
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\bin\Debug\05-while(true).pdb
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\obj\Debug\05-while(true).csprojResolveAssemblyReference.cache
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\obj\Debug\05-while(true).csproj.CoreCompileInputs.cache
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\obj\Debug\05-while(true).exe
+C:\Users\siims\Desktop\homework\homework\Exercises\05-while(true)\obj\Debug\05-while(true).pdb

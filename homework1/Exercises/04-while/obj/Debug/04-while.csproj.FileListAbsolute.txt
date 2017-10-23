@@ -1,0 +1,6 @@
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\bin\Debug\04-while.exe
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\bin\Debug\04-while.pdb
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\obj\Debug\04-while.csproj.CoreCompileInputs.cache
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\obj\Debug\04-while.exe
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\obj\Debug\04-while.pdb
+C:\Users\siims\Desktop\homework\homework\Exercises\04-while\obj\Debug\04-while.csprojResolveAssemblyReference.cache
