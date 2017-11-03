@@ -44,7 +44,7 @@ namespace _01_kalkulaator
                             Console.WriteLine($"{firstNum} * {secondNum} = {firstNum * secondNum}\n");
                             break;
                         case '/': // Kui kasutaja sisestas "/", siis programm jagab eelnevalt sisestatud arvud ja näitab tulemust.
-                            if (double.Parse(secondInp) == 0)
+                            if (double.Parse(secondInp) == 0) // Kui kasutaja tahab jagada 0'ga, siis programm hoiatab, et see pole võimalik.
                             {
                                 Console.WriteLine("Nulliga ei saa jagada!\n");
                             }
@@ -61,7 +61,6 @@ namespace _01_kalkulaator
                 }
                 catch(Exception ex) //Kui programmis tekib error, siis näitab kasutajale allolevat teksti.
                 {
-                    Console.WriteLine($"{ex}\n");
                     Console.WriteLine("Kasutage ainult arve ja väljumiseks 'exit'.\n");
                 }
             }
