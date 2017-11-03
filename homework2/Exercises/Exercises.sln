@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercises", "Exercises\Exercises.csproj", "{F083E878-3380-4A8A-9259-0D1F6928DDC9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01-kalkulaator", "01-kalkulaator\01-kalkulaator.csproj", "{F083E878-3380-4A8A-9259-0D1F6928DDC9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -20,6 +20,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4E03E839-02E8-4094-9F88-22A7790B2D9A}
+		SolutionGuid = {5AABE45F-FD82-403B-ABE9-7A42BE67A5B3}
 	EndGlobalSection
 EndGlobal
