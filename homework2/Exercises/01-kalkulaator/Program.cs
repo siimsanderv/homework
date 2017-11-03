@@ -10,11 +10,12 @@ namespace _01_kalkulaator
         static void Main(string[] args)
         {
             Console.WriteLine("See on kalkulaator, millega saab liita, lahutada, korrutada, jagada ja astendada omavahel 2 arvu. Väljumiseks sisestage 'exit'");
-            Console.WriteLine("Komakoha jaoks kasutage '.'\n");
+            Console.WriteLine("Komakoha jaoks kasutage punkti '.'\n");
             do //Programm töötab loopina, ehk ei lähe kinni pärast esimest arvutust
             {
                 try //Kontrollib, kas programmi töötamise ajal (näiteks, kui kasutaja sisestab midagi) tekib mõni error.
-                { 
+                    // JUURDE ÕPITUD try-catch
+                {
                     Console.Write("Sisestage esimene arv: ");
                     string firstInp = Console.ReadLine(); // Kasutaja sisestab arvu või "exit".
                     if (firstInp == "exit") // Kontrollib, kas sisestus on "exit", kui jah, siis programm läheb kinni.
@@ -31,6 +32,7 @@ namespace _01_kalkulaator
                         break;
                     char opSign = char.Parse(thirdInp); // Muudab sisestuse stringist chariks.
                     switch (opSign) // Kontrollib, mis märgi kasutaja sisestas.
+                                    // JUURDE ÕPITUD switch ja case
                     {
                         case '+': // Kui kasutaja sisestas "+", siis programm liidab eelnevalt sisestatud arvud ja näitab tulemust.
                             Console.WriteLine($"{firstNum} + {secondNum} = {firstNum + secondNum}\n");
@@ -42,15 +44,24 @@ namespace _01_kalkulaator
                             Console.WriteLine($"{firstNum} * {secondNum} = {firstNum * secondNum}\n");
                             break;
                         case '/': // Kui kasutaja sisestas "/", siis programm jagab eelnevalt sisestatud arvud ja näitab tulemust.
-                            Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}\n");
+                            if (double.Parse(secondInp) == 0)
+                            {
+                                Console.WriteLine("Nulliga ei saa jagada!\n");
+                            }
+                            else
+                                Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}\n");
                             break;
                         case '^': // Kui kasutaja sisestas "^", siis programm astendab eelnevalt sisestatud esimese arvu teise arvuga ja näitab tulemust.
-                            Console.WriteLine($"{firstNum} ^ {secondNum} = {Math.Pow(firstNum, secondNum)}\n");
+                            if (double.Parse(secondInp) == 0)
+                                Console.WriteLine($"{firstNum} ^ {secondNum} = 1\n"); 
+                            else
+                                Console.WriteLine($"{firstNum} ^ {secondNum} = {Math.Pow(firstNum, secondNum)}\n"); // JUURDE ÕPITUD Math.Pow()
                             break;
                     }
                 }
-                catch(Exception) //Kui programm leiab errori, siis näitab kasutajale allolevat teksti.
+                catch(Exception ex) //Kui programmis tekib error, siis näitab kasutajale allolevat teksti.
                 {
+                    Console.WriteLine($"{ex}\n");
                     Console.WriteLine("Kasutage ainult arve ja väljumiseks 'exit'.\n");
                 }
             }
