@@ -52,7 +52,7 @@ namespace _01_kalkulaator
                                 Console.WriteLine($"{firstNum} / {secondNum} = {firstNum / secondNum}\n");
                             break;
                         case '^': // Kui kasutaja sisestas "^", siis programm astendab eelnevalt sisestatud esimese arvu teise arvuga ja näitab tulemust.
-                            if (double.Parse(secondInp) == 0)
+                            if (double.Parse(secondInp) == 0) // Kui kasutaja tahab astendada 0'ga, siis vastus on 1.
                                 Console.WriteLine($"{firstNum} ^ {secondNum} = 1\n"); 
                             else
                                 Console.WriteLine($"{firstNum} ^ {secondNum} = {Math.Pow(firstNum, secondNum)}\n"); // JUURDE ÕPITUD Math.Pow()
