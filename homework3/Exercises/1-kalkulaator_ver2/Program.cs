@@ -7,19 +7,19 @@ namespace _1_kalkulaator_ver2
 {
     class Program
     {
-        static void Main(string[] args)
+        static int Main(string[] args)
         {
-            Console.WriteLine("See on kalkulaator, millega saab liita, lahutada, korrutada, jagada ja astendada omavahel arve. Väljumiseks sisestage 'exit'");
+            Console.WriteLine("See on kalkulaator, millega saab liita, lahutada, korrutada, jagada ja astendada omavahel arve. \nVäljumiseks sisestage 'exit'.");
             Console.WriteLine("Komakoha jaoks kasutage punkti '.'\n");
             do 
             {
                 try 
                 {
-                    Beginning: //kui programmis on goto Beginning;, siis programm tuleb siia, et algusest peale alustada.
+
                     Console.Write("Mitme arvuga soovite tehet teha: ");
                     var firstInp = Console.ReadLine();
                     if (firstInp == "exit")
-                        goto End;
+                        break;
                     int numAmnt = int.Parse(firstInp); //muudab int'iks
                     double[] numList = new double[numAmnt];//loob uue array
                     for (int i = 0; i < numAmnt; i++)
@@ -27,14 +27,16 @@ namespace _1_kalkulaator_ver2
                         Console.Write($"\nSisestage {i + 1}. arv: ");
                         var secInp = Console.ReadLine(); // var kasutades teeb arvuti kindlaks, kas kasutaja sisestas string, int, double vms. vajalik, et exit sisestades ei tuleks error.
                         if (secInp == "exit")
-                            goto End; //kui kasutaja sisestab exit, siis programm liigub label End juurde, et programm sulgeda
+                        {
+                            return 0; 
+                        }
                         else
-                            numList[i] = double.Parse(secInp);
+                            numList[i] = double.Parse(secInp); 
                     }
                     Console.Write("\nKas soovite arve liita (+), lahutada (-), korrutada (*), jagada (/) või astendada (^): ");
                     string thirdInp = Console.ReadLine();
                     if (thirdInp == "exit") 
-                        goto End;
+                        break;
                     char opSign = char.Parse(thirdInp);
                     switch (opSign) 
                     {
@@ -63,7 +65,7 @@ namespace _1_kalkulaator_ver2
                                 if (numList[i] == 0)
                                 {
                                     Console.WriteLine("Nulliga ei saa jagada!\n");
-                                    goto Beginning;
+                                    break;
                                 }
                                 div = div / numList[i];
                            }
@@ -89,8 +91,7 @@ namespace _1_kalkulaator_ver2
                 }
             }
             while (true); //Programm töötab nii kaua, kuni kasutaja sisestab "exit".
-            End: //kui programmis on "goto End;", siis ta tuleb siia, et programm sulgeda.
-            Console.ReadKey();
+            return 0;
         }
     }
 }
