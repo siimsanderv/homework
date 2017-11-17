@@ -17,7 +17,7 @@ namespace tunnikontroll17._11
             Console.WriteLine("Taco Palenque\n1200 Main ST.");
             Console.WriteLine("----------------------------------------");
             double sum = 0;
-            while(true)
+            while (true)
             {
                 Console.Write("Enter price of food item [-1 to quit]: ");
                 var input = Console.ReadLine();
