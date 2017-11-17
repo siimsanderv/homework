@@ -16,7 +16,7 @@ namespace _1_PrintGreeting
             for (int i = 0; i < amt; i++)
             {
                 Console.Write("Sisesta nimi: ");
-               names[i] = Console.ReadLine();
+                names[i] = Console.ReadLine();
             }
             foreach (var name in names)
             {
@@ -26,7 +26,7 @@ namespace _1_PrintGreeting
         }
         static void PrintGreeting(string str)
         {
-            Console.WriteLine(str);
+            Console.WriteLine($"Tere{str}");
         }
     }
 }
