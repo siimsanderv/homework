@@ -13,6 +13,7 @@ namespace FizzBuzz
             for(int i=1;i<=100;i++)
             {
                 if(i%3==0 && i%5==0)
+<<<<<<< HEAD
                 {
                     Console.WriteLine("FizzBuzz");
                 }
@@ -20,6 +21,11 @@ namespace FizzBuzz
                 {
                     Console.WriteLine("Fizz");
                 }
+=======
+                    Console.WriteLine("FizzBuzz");
+                else if(i%3==0)
+                    Console.WriteLine("Fizz");
+>>>>>>> review
                 else if(i%5==0)
                     Console.WriteLine("Buzz");
                 else
