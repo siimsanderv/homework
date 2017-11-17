@@ -1,5 +1,0 @@
-C:\Users\siims\Desktop\homework\homework\Exercises\03-random\bin\Debug\03-random.exe
-C:\Users\siims\Desktop\homework\homework\Exercises\03-random\bin\Debug\03-random.pdb
-C:\Users\siims\Desktop\homework\homework\Exercises\03-random\obj\Debug\03-random.csproj.CoreCompileInputs.cache
-C:\Users\siims\Desktop\homework\homework\Exercises\03-random\obj\Debug\03-random.exe
-C:\Users\siims\Desktop\homework\homework\Exercises\03-random\obj\Debug\03-random.pdb
