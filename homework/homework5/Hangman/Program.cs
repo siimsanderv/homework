@@ -28,10 +28,10 @@ namespace Hangman
             string word = words[rnd.Next(words.Count)].ToUpper(); //loob stringi ja lisab sinna loomade listist ühe suvalise looma
             char[] letters = word.ToCharArray(); //loob array, mis koosneb looma stringi tähtedest
             char[] board = new string('_', word.Length).ToCharArray(); //loob char array, mis koosneb nii palju "_"'dest, kui neid on looma nimes
-            int tries = 0;
+            int wrongTries = 0;
 
             string letterChoice = "";
-            while (letterChoice != "EXIT" && tries < 5) //programm töötab kuni inimene ei soovi väljuda ja arvatud tähtede arv on alla 5
+            while (letterChoice != "EXIT" && wrongTries < 5) //programm töötab kuni inimene ei soovi väljuda ja arvatud tähtede arv on alla 5
             {
                 string boardStr = new string(board);
                 if (boardStr == word) //suleb programmi, kui inimene arvab sõna õigesti
@@ -43,7 +43,7 @@ namespace Hangman
                 Console.Write("Paku: ");
 
                 letterChoice = Console.ReadLine().Trim().ToUpper(); //eemaldab kasutaja pakutust tähest whitespace ja muudab väikesed tähed suurteks
-                if (letterChoice != "EXIT" && tries < 5) //kui kasutaja ei sisesta exit või arvamiste arv on alla 5, siis lisab õige arvamise korral tähe oma kohale "_" asemele
+                if (letterChoice != "EXIT" && wrongTries < 5) //kui kasutaja ei sisesta exit või arvamiste arv on alla 5, siis lisab õige arvamise korral tähe oma kohale "_" asemele
                 {
                     char letter = letterChoice.ToCharArray()[0];
                     letterChoice = letterChoice.Substring(0, 1);
@@ -53,8 +53,10 @@ namespace Hangman
                         {
                             board[i] = letter;
                         }
+                        else if (letters[i] != letter)
+                            wrongTries++;
+                        Console.WriteLine(wrongTries);
                     }
-                    tries++;
                 }
 
             }
