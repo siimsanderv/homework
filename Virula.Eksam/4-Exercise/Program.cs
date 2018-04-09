@@ -33,18 +33,11 @@ namespace _4_Exercise
             
             dates.Sort((a, b) => a.CompareTo(b));
 
-            var maximum = dates.Max(record => record.Date);
-            
-            var minimum = dates.Min(record => record.Date);
+            Console.WriteLine($"Maksimaalne vanus on {maximumage(dates.Min(),today)}\n");
 
-            var first = dates.First().Ticks;
-            var avg = new DateTime(first + (long)dates.Average(d => d.Ticks - first));
+            Console.WriteLine($"Minimaalne vanus on {minimumage(dates.Max(),today)}\n");
 
-            Console.WriteLine($"Maksimaalne vanus on {maximumage(minimum,today)}\n");
-
-            Console.WriteLine($"Minimaalne vanus on {minimumage(maximum,today)}\n");
-
-            Console.WriteLine($"Keskmine vanus on {averageage(avg, today)}\n");
+            Console.WriteLine($"Keskmine vanus on {averageAge(dates, today)}\n");
 
             Console.WriteLine($"Kõige rohkem sünnipäevi on { mostOccurringMonth} kuus.\n");
 
@@ -71,10 +64,18 @@ namespace _4_Exercise
             return maximumAge;
         }
 
-        public static int averageage(DateTime avg, DateTime today)
+        public static int averageAge(List<DateTime> dates, DateTime today)
         {
-            int avgAge = today.Year - avg.Year;
-            if (today < avg.AddYears(avgAge))
+            long totalTicks = 0;
+            long averageTicks = 0;
+            for (int i = 0; i < dates.Count; i++)
+            {
+                totalTicks += dates[i].Ticks/1000;
+            }
+            averageTicks = totalTicks / dates.Count*1000;
+            DateTime averageDate = new DateTime(averageTicks);
+            int avgAge = today.Year - averageDate.Year;
+            if (today < averageDate.AddYears(avgAge))
                 avgAge--;
             return avgAge;
         }

@@ -14,15 +14,13 @@ namespace _2_Exericse
             Console.Write("Sisestage lause: ");
             string sentence = Console.ReadLine();
             List<string> sentence_list = sentence.Split(' ').ToList();
-            for(int i=0;i<=9;i++)
+            for(int i=0;i<names.Count();i++)
             {
                 for(int j=0;j<sentence_list.Count();j++)
                 {
-                    if (sentence_list[j] == names[i])
+                    if (sentence_list[j].Contains(names[i]))
                     {
-                        int index = sentence_list.IndexOf(names[i]);
-                        if (index != -1)
-                            sentence_list[index] = UpperCaseFirst(sentence_list[j]);
+                        sentence_list[j] = UpperCaseFirst(sentence_list[j]);
                     }
                 }
             }
